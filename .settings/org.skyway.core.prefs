@@ -1,0 +1,6 @@
+#org.skyway.core settings
+#Thu Dec 29 22:14:40 HKT 2016
+version=11.0.1.me201405280815
+default.top.level.package=com.glupta.jiaotongPPP
+models.folder.name=.springDSL
+initialized=true

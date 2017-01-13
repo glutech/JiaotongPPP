@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<display-name>JiaotongPPP</display-name>
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+	<listener>
+		<listener-class>
+			org.springframework.web.context.request.RequestContextListener
+		</listener-class>
+	</listener>
+	<filter>
+		<description>generated-persistence-filter</description>
+		<filter-name>PPP_database_ConnectionFilter</filter-name>
+		<filter-class>
+			org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter
+		</filter-class>
+		<init-param>
+			<param-name>entityManagerFactoryBeanName</param-name>
+			<param-value>PPP_database_Connection</param-value>
+		</init-param>
+	</filter>
+<!--	<filter>
+		<description>generated-sitemesh-filter</description>
+		<filter-name>Sitemesh Filter</filter-name>
+		<filter-class>
+			com.opensymphony.module.sitemesh.filter.PageFilter
+		</filter-class>
+	</filter>-->
+	<filter-mapping>
+		<filter-name>PPP_database_ConnectionFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+<!--	<filter-mapping>
+		<filter-name>Sitemesh Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>-->
+	<!-- 为了使用SpringMVC框架实现REST，需配置 HiddenHttpMethodFilter -->
+
+	<servlet>
+		<description>generated-servlet</description>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<servlet-class>
+			org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>
+				classpath:JiaotongPPP-web-context.xml
+			</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<description>generated-resources-servlet</description>
+		<servlet-name>Resource Servlet</servlet-name>
+		<servlet-class>
+			org.springframework.js.resource.ResourceServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Resource Servlet</servlet-name>
+		<url-pattern>/resources/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>*.action</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/saveProjects</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/newProjects</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/deleteProjects</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/indexProjects</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/editProjects</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/selectProjects</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/confirmDeleteProjects</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/saveExperts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/editExperts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/deleteExperts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/newExperts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/confirmDeleteExperts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/selectExperts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/indexExperts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/Experts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/Experts/{experts_expertId}</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/Projects</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/Projects/{projects_projectId}</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/Docs/{docs_docId}</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/Docs</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/indexUsers</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/selectUsers</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/saveUsers</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/newUsers</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/confirmDeleteUsers</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/editUsers</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/deleteUsers</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/News</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/News/{news_newsId}</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/Users</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/Users/{users_userId}</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/indexNews</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/selectNews</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/deleteNews</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/editNews</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/saveNews</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/confirmDeleteNews</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/newNews</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/editDocs</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/confirmDeleteDocs</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/saveDocs</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/newDocs</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/deleteDocs</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/indexDocs</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/selectDocs</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/editOrgnizations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/confirmDeleteOrgnizations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/saveOrgnizations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/selectOrgnizations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/indexOrgnizations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/newOrgnizations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/deleteOrgnizations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/Orgnizations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JiaotongPPP Servlet</servlet-name>
+		<url-pattern>/Orgnizations/{orgnizations_orgId}</url-pattern>
+	</servlet-mapping>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:applicationContext.xml</param-value>
+	</context-param>
+	<welcome-file-list>
+		<welcome-file>/app/project.html</welcome-file>
+	</welcome-file-list>
+</web-app>

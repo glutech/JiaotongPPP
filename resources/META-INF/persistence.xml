@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	
+	
+		<persistence-unit name="PPP_database_Connection" transaction-type="JTA" >
+			<description>generated-persistence-unit</description>
+					<provider>org.hibernate.ejb.HibernatePersistence</provider>
+      			<class>com.glupta.jiaotongPPP.domain.Projects</class>
+      			<class>com.glupta.jiaotongPPP.domain.Docs</class>
+      			<class>com.glupta.jiaotongPPP.domain.Users</class>
+      			<class>com.glupta.jiaotongPPP.domain.Experts</class>
+      			<class>com.glupta.jiaotongPPP.domain.Orgnizations</class>
+      			<class>com.glupta.jiaotongPPP.domain.News</class>
+   			<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		</persistence-unit>
+
+	
+</persistence>
